@@ -34,15 +34,14 @@ import org.appcelerator.titanium.util.TiIntentWrapper;
 import android.app.Activity;
 import android.content.Intent;
 
-import fi.harism.curl.CurlActivity;
 
 
-@Kroll.module(name="Curlpagefilp", id="com.visusway.mod.curlpagefilp")
+@Kroll.module(name="CurlPageFlip", id="com.visusway.mod.curlpageflip")
 public class CurlPageFlipModule extends KrollModule
 {
 
 	// Standard Debugging variables
-	private static final String LCAT = "CurlpagefilpModule";
+	private static final String LCAT = "CurlPageFlipModule";
 	private static final boolean DBG = TiConfig.LOGD;
 	protected static final int UNKNOWN_ERROR = 0;
 
@@ -76,22 +75,22 @@ public class CurlPageFlipModule extends KrollModule
 		final KrollFunction cancelCallback = getCallback(options, "cancel");
 		final KrollFunction errorCallback = getCallback(options, "error");
 
-		logDebug("launchCurlPageFilpActivity() called");
+		logDebug("launchCurlPageFlipActivity() called");
 
 
 		final Activity activity = TiApplication.getAppCurrentActivity();
 		final TiActivitySupport activitySupport = (TiActivitySupport) activity;
 
-		final TiIntentWrapper curlpagefilpIntent = new TiIntentWrapper(new Intent(
-				activity, CurlActivity.class));
-		curlpagefilpIntent.setWindowId(TiIntentWrapper.createActivityName("CURLPAGEFILP"));
+		final TiIntentWrapper curlpageflipIntent = new TiIntentWrapper(new Intent(
+				activity, CurlPageFlipActivity.class));
+		curlpageflipIntent.setWindowId(TiIntentWrapper.createActivityName("CURLPAGEFLIP"));
 
 		CurlPageFlipResultHandler resultHandler = new CurlPageFlipResultHandler();
 		resultHandler.successCallback = successCallback;
 		resultHandler.cancelCallback = cancelCallback;
 		resultHandler.errorCallback = errorCallback;
 		resultHandler.activitySupport = activitySupport;
-		resultHandler.curlpagefilpIntent = curlpagefilpIntent.getIntent();
+		resultHandler.curlpageflipIntent = curlpageflipIntent.getIntent();
 		activity.runOnUiThread(resultHandler);
 	}
 	
@@ -140,11 +139,11 @@ public class CurlPageFlipModule extends KrollModule
 		protected int code;
 		protected KrollFunction successCallback, cancelCallback, errorCallback;
 		protected TiActivitySupport activitySupport;
-		protected Intent curlpagefilpIntent;
+		protected Intent curlpageflipIntent;
 
 		public void run() {
 			code = activitySupport.getUniqueResultCode();
-			activitySupport.launchActivityForResult(curlpagefilpIntent, code, this);
+			activitySupport.launchActivityForResult(curlpageflipIntent, code, this);
 		}
 
 		public void onError(Activity activity, int requestCode, Exception e) {

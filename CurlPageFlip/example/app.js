@@ -13,16 +13,16 @@ win.add(label);
 win.open();
 
 // TODO: write your module tests here
-var CurlPageFilp = require('com.visusway.mod.curlpagefilp');
-Ti.API.info("module is => " + CurlPageFilp);
+var CurlPageFlip = require('com.visusway.mod.curlpageflip');
+Ti.API.info("module is => " + CurlPageFlip);
 
-label.text = CurlPageFilp.example();
+label.text = CurlPageFlip.example();
 
-Ti.API.info("module exampleProp is => " + CurlPageFilp.exampleProp);
-CurlPageFilp.exampleProp = "This is a test value";
+Ti.API.info("module exampleProp is => " + CurlPageFlip.exampleProp);
+CurlPageFlip.exampleProp = "This is a test value";
 
 if (Ti.Platform.name == "android") {
-	var proxy = CurlPageFilp.createExample({
+	var proxy = CurlPageFlip.createExample({
 		message: "Creating an example Proxy",
 		backgroundColor: "red",
 		width: 100,

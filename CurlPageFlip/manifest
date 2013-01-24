@@ -2,7 +2,7 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.1
+version: 0.2
 apiversion: 2
 description: My module
 author: Darcy.G
@@ -13,6 +13,6 @@ copyright: Copyright (c) 2013 by Your Company
 # these should not be edited
 name: CurlPageFlip
 moduleid: com.visusway.mod.curlpageflip
-guid: 0eb93a78-c4fc-41be-b2fe-2ee5803a18d5
+guid: a5220c63-14b0-475f-a6a4-30921e59b174
 platform: android
 minsdk: 3.0.0.GA

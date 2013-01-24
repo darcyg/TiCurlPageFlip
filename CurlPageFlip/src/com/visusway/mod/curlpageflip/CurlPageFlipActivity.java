@@ -14,9 +14,10 @@
    limitations under the License.
  */
 
-package fi.harism.curl;
+package com.visusway.mod.curlpageflip;
 
 import android.app.Activity;
+
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -27,21 +28,31 @@ import android.os.Bundle;
 
 import org.appcelerator.titanium.util.TiRHelper;
 import org.appcelerator.titanium.util.TiRHelper.ResourceNotFoundException;
+import org.appcelerator.kroll.common.Log;
+
+import fi.harism.curl.CurlPage;
+import fi.harism.curl.CurlView;
+import fi.harism.curl.CurlView.PageProvider;
+import fi.harism.curl.CurlView.SizeChangedObserver;
 
 /**
  * Simple Activity for curl testing.
  * 
  * @author harism
  */
-public class CurlActivity extends Activity {
+public class CurlPageFlipActivity extends Activity {
 
 	private CurlView mCurlView;
+	private static final String LCAT = "CurlPageFlipActivity";
 	
 	private int getResourceID(String resName) {
 		int resid = 0;
 		try {
-			resid = TiRHelper.getApplicationResource("layout.main");
+			//Log.d(LCAT,"resName:"+resName);
+			resid = TiRHelper.getApplicationResource(resName);
+			//Log.d(LCAT,"resName:"+resName+" = "+ resid);
 		} catch (ResourceNotFoundException e) {
+			//Log.e(LCAT,"resName:"+resName);
 			resid = -1;
 		}		
 		return resid;
@@ -49,6 +60,7 @@ public class CurlActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		//Log.d(LCAT,"onCreate!!");
 		super.onCreate(savedInstanceState);
 		//setContentView(R.layout.main);
 		

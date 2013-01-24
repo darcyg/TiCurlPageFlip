@@ -1,16 +1,16 @@
-# CurlPageFilp Module
+# CurlPageFlip Module
 
 ## Description
 
 TODO: Enter your module description here
 
-## Accessing the CurlPageFilp Module
+## Accessing the CurlPageFlip Module
 
 To access this module from JavaScript, you would do the following:
 
-	var CurlPageFilp = require("com.visusway.mod.curlpagefilp");
+	var CurlPageFlip = require("com.visusway.mod.curlpageflip");
 
-The CurlPageFilp variable is a reference to the Module object.	
+The CurlPageFlip variable is a reference to the Module object.	
 
 ## Reference
 

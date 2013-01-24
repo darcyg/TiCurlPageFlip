@@ -1,6 +1,6 @@
-<project name="curlpagefilp" default="dist">
+<project name="curlpageflip" default="dist">
 	<description>
-		Ant build script for Titanium Android module CurlPageFilp
+		Ant build script for Titanium Android module CurlPageFlip
 	</description>
 
 	<property name="ti.module.root" location="${basedir}"/>
