@@ -15,7 +15,7 @@ function FirstView() {
 	//Add behavior for UI
 	label.addEventListener('click', function(e) {
 		//alert(e.source.text);		
-		var curlpageflip = require('com.visusway.mod.curlpagefilp');
+		var curlpageflip = require('com.visusway.mod.curlpageflip');
 		curlpageflip.openBook({
 			success:function(data) {
 		    	alert(JSON.stringify(data));
