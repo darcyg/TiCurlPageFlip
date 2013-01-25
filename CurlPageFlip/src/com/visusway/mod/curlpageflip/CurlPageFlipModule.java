@@ -34,6 +34,8 @@ import org.appcelerator.titanium.util.TiIntentWrapper;
 import android.app.Activity;
 import android.content.Intent;
 
+import org.appcelerator.titanium.util.TiRHelper;
+import org.appcelerator.titanium.util.TiRHelper.ResourceNotFoundException;
 
 
 @Kroll.module(name="CurlPageFlip", id="com.visusway.mod.curlpageflip")
@@ -66,6 +68,22 @@ public class CurlPageFlipModule extends KrollModule
 	{
 		Log.d(LCAT, "example called");
 		return "hello world";
+	}
+	
+	@Kroll.method
+	public int findResID(String resName)
+	{
+		Log.d(LCAT, "findResID called");
+		int resid = 0;
+		try {
+			//Log.d(LCAT,"resName:"+resName);
+			resid = TiRHelper.getApplicationResource(resName);
+			//Log.d(LCAT,"resName:"+resName+" = "+ resid);
+		} catch (ResourceNotFoundException e) {
+			//Log.e(LCAT,"resName:"+resName);
+			resid = -1;
+		}		
+		return resid;
 	}
 
 	@Kroll.method

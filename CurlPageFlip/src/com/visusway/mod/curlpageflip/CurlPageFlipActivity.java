@@ -65,6 +65,7 @@ public class CurlPageFlipActivity extends Activity {
 		//setContentView(R.layout.main);
 		
 		setContentView(getResourceID("layout.main"));
+		//this.setContentView(view, params)
 
 		int index = 0;
 		if (getLastNonConfigurationInstance() != null) {
